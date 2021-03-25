@@ -24,6 +24,9 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body class="antialiased">
+        @include('inc.navbar')
+        <div class="container">
             @yield('content')
+        </div>
     </body>
 </html>

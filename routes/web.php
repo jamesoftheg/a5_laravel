@@ -19,8 +19,6 @@ Route::get('/', [PagesController::class,"index"]);
 Route::get('about', [PagesController::class,"about"]);
 Route::get('services', [PagesController::class,"services"]);
 
-//Route::resource('/services', PagesController::class);
-
 /*
 Route::get('/', function () {
     return view('welcome');
