@@ -8,15 +8,25 @@ class PagesController extends Controller
 {
     // This function will look within the views folder within the pages subfolder for a page called index.blade.php
     public function index() {
-        return view('pages.index');
+        $title = 'Welcome to Laravel';
+        // This is one way to pass parameters.
+        // return view('pages.index', compact('title'));
+        // This is a good way to pass in arrays.
+        return view('pages.index')->with('title', $title);
     }
 
     public function about() {
-        return view('pages.about');
+        $title = 'About Us';
+        return view('pages.about')->with('title', $title);
     }
 
     public function services() {
-        return view('pages.services');
+        $title = 'Our Services';
+        $data = array(
+            'title' => 'Our Services',
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        return view('pages.services')->with($data);
     }
 
 }
