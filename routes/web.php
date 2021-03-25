@@ -18,11 +18,11 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 
 // If we go to our app name /about we'd get this result
 // We don't want to return a view from our route.
