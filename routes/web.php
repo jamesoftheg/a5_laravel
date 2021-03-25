@@ -18,11 +18,15 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
+//Route::resource('/services', PagesController::class);
+
 /*
 Route::get('/', function () {
     return view('welcome');
 });
 */
+
+/*
 
 // If we go to our app name /about we'd get this result
 // We don't want to return a view from our route.
@@ -38,7 +42,7 @@ Route::get('/users/{id}/{name}', function ($id, $name) {
     return 'This is user' . $name.' with an id of '.$id;
 });
 
-/*
+
 // If we go to our app name /hello we'd get this result
 Route::get('/hello', function () {
     return '<h1>Hello world!</h1>';
