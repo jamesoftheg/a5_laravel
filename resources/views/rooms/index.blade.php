@@ -14,6 +14,7 @@
                     <h4>Maximum occupancy: {{$room->occupancy}}</h4>
                     <p>{{$room->description}}</p>
                     <h2><a href="/rooms/{{$room->id}}">Show Room Details</a></h2>
+                    <h2><a href="/rooms/destroy/{{$room->id}}">Delete</a></h2>
                 </div>
             @endforeach
     @else

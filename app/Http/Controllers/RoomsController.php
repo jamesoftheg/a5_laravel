@@ -38,14 +38,6 @@ class RoomsController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        $validate = $request->validate([
-            'number' => 'required|numeric',
-            'name' => 'required|unique:rooms',
-            'description' => 'required',
-            'occupancy' => 'required|numeric',
-        ]);
-        */
 
         $validator = Validator::make($request->all(), [
             'number' => 'required|numeric',
@@ -55,7 +47,7 @@ class RoomsController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('rooms/create')
+            return redirect('rooms.create')
                 ->withErrors($validator)
                 ->withInput();
         } else {
@@ -114,6 +106,10 @@ class RoomsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::find($id);
+        $room->delete();
+
+        $rooms = Room::all();
+        return view('rooms.index')->with('rooms', $rooms);
     }
 }
