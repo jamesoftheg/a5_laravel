@@ -9,7 +9,10 @@
     @if(count($rooms) > 0)
         <ul class="list-group">
             @foreach($rooms as $room)
-                <li class="list-group-item">{{$room->name}}</li>
+                <div class="well">
+                    <h3>{{$room->name}}</h3>
+                    <h2><a href="/rooms/{{$room->id}}">Show Room Details</a></h2>
+                </div>
             @endforeach
         </ul>
     @else

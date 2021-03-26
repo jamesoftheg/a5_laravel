@@ -47,7 +47,7 @@ class RoomsController extends Controller
      */
     public function show($id)
     {
-        //
+        return Room::find($id);
     }
 
     /**
