@@ -21,7 +21,7 @@
             }
         </style>
         <!-- Adding a custom CSS -->
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        
     </head>
     <body class="antialiased">
         @include('inc.navbar')
