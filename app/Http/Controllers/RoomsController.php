@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
-// Code from example
-use Illuminate\Support\Facades\DB;
 
 class RoomsController extends Controller
 {
@@ -16,8 +14,7 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        //$rooms = Room::all();
-        $rooms = DB::select("SELECT * FROM rooms;");
+        $rooms = Room::all();
         return view('rooms.index')->with('rooms', $rooms);
     }
 

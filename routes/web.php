@@ -25,7 +25,9 @@ Route::get('services', [PagesController::class,"services"]);
 // Route::get('/rooms', [RoomsController::class,"index"]);
 
 // Route::resource('/rooms', RoomsController::class);
-Route::resource('rooms', 'RoomsController');
+// Route::resource('rooms', 'RoomsController');
+Route::resource('/rooms', RoomsController::class);
+
 // We can view our routes using php artisan route:list in the terminal
 
 /*
