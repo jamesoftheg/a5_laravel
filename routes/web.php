@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\RoomsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', [PagesController::class,"index"]);
 Route::get('about', [PagesController::class,"about"]);
 Route::get('services', [PagesController::class,"services"]);
 
-Route::resource('/rooms', RoomsController::class);
+Route::resource('rooms', RoomsController::class);
 //Route::resource('rooms', 'RoomsController');
 // We can view our routes using php artisan route:list in the terminal
 
