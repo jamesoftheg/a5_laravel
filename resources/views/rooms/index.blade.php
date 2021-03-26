@@ -7,14 +7,15 @@
     <p>This is the rooms page.</p>
 
     @if(count($rooms) > 0)
-        <ul class="list-group">
             @foreach($rooms as $key => $room)
-                <div class="well">
+                <div class="card card-body bg-light">
                     <h3>{{$room->name}}</h3>
+                    <h4>Room number: {{$room->number}}</h4>
+                    <h4>Maximum occupancy: {{$room->occupancy}}</h4>
+                    <p>{{$room->description}}</p>
                     <h2><a href="/rooms/{{$room->id}}">Show Room Details</a></h2>
                 </div>
             @endforeach
-        </ul>
     @else
         <p>No rooms found.</p>
     @endif

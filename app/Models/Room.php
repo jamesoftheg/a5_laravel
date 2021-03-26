@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    // Table Name
+    protected $guarded = [];
+    // Table name
     protected $table = 'rooms';
 }

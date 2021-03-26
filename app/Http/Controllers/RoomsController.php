@@ -26,7 +26,7 @@ class RoomsController extends Controller
      */
     public function create()
     {
-        //
+        return view('rooms.create');
     }
 
     /**
@@ -37,7 +37,31 @@ class RoomsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'number' => 'required|numeric',
+            'name' => 'required|unique:rooms',
+            'description' => 'required',
+            'occupancy' => 'required|numeric',
+        ]);
+
+        $validator = Validator::make(Input::all(), $validate);
+
+        if ($validator->fails()) {
+            return Redirect::to('rooms.create')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            // store
+            $room = new Room;
+            $room->number = Input::get('number');
+            $room->name = Input::get('name');
+            $room->description = Input::get('description');
+            $room->occupancy = Input::get('occupancy');
+            $room->save();
+
+            $rooms = Room::all();
+            return view('rooms.index')->with('rooms', $rooms);
+        }
     }
 
     /**
