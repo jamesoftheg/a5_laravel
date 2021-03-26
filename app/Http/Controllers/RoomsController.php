@@ -14,7 +14,8 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
+        //$rooms = Room::all();
+        $rooms = DB::select("SELECT * FROM rooms;");
         return view('rooms.index')->with('rooms', $rooms);
     }
 
