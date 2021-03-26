@@ -22,7 +22,7 @@ Route::get('about', [PagesController::class,"about"]);
 Route::get('services', [PagesController::class,"services"]);
 
 // Testing rooms controller
-Route::get('rooms', [RoomsController::class,"index"]);
+Route::get('/rooms', [RoomsController::class,"index"]);
 
 // Route::resource('/rooms', RoomsController::class);
 // Route::resource('rooms', 'RoomsController');
