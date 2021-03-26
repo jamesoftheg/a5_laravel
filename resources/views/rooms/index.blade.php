@@ -14,10 +14,10 @@
                     <h4>Maximum occupancy: {{$room->occupancy}}</h4>
                     <p>{{$room->description}}</p>
                     <h2><a href="/rooms/{{$room->id}}">Show Room Details</a></h2>
-                    <form method="post" action="{{ route('rooms/destroy/'), {{$room->id}} }}">                   
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}              
-                        <button type="submit">Delete</button>
+                    <form action="{{ url('/rooms', ['id' => $room->id]) }}" method="post">
+                        <input class="btn btn-default" type="submit" value="Delete" />
+                        @method('delete')
+                        @csrf
                     </form>
                 </div>
             @endforeach
