@@ -61,10 +61,10 @@ class RoomsController extends Controller
         } else {
             // store
             $room = new Room;
-            $room->number = Input::get('number');
-            $room->name = Input::get('name');
-            $room->description = Input::get('description');
-            $room->occupancy = Input::get('occupancy');
+            $room->number = $request->number;
+            $room->name = $request->name;
+            $room->description = $request->description;
+            $room->occupancy = $request->occupancy;
             $room->save();
 
             $rooms = Room::all();
