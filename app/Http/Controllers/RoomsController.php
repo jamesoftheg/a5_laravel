@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use Illuminate\Support\Facades\Validator;
 
 class RoomsController extends Controller
 {
@@ -37,17 +38,24 @@ class RoomsController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         $validate = $request->validate([
             'number' => 'required|numeric',
             'name' => 'required|unique:rooms',
             'description' => 'required',
             'occupancy' => 'required|numeric',
         ]);
+        */
 
-        $validator = Validator::make(Input::all(), $validate);
+        $validator = Validator::make($request->all(), [
+            'number' => 'required|numeric',
+            'name' => 'required|unique:rooms',
+            'description' => 'required',
+            'occupancy' => 'required|numeric',
+        ]);
 
         if ($validator->fails()) {
-            return Redirect::to('rooms.create')
+            return Redirect::to('rooms/create')
                 ->withErrors($validator)
                 ->withInput();
         } else {
