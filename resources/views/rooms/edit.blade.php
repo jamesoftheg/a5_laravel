@@ -18,7 +18,7 @@
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
             <textarea type="text" class="form-control" id="roomDescription" name="description" value={{ $room->description }}></textarea>
-            {{ Form::textarea('name', {{ $room->description }}, array('class' => 'form-control')) }}
+            {{ Form::textarea('name', $room->description, array('class' => 'form-control')) }}
         </div>
         {{ Form::submit('Submit Edit', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
