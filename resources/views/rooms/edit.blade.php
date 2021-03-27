@@ -12,7 +12,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{url('rooms', [$room->id])}}" method="put">
+    <form action="{{url('rooms', [$room->id])}}" method="post">
         @method('put')
         @csrf
         <div class="form-group">
