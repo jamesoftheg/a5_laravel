@@ -12,14 +12,13 @@
         </ul>
     </div>
     @endif
-    {{ Form::model($room, array('route' => array('rooms.update', $room->id), 'method' => 'PUT')) }}
+    <form action="/rooms/{{ $room ->id }}" method="put">
         @method('put')
         @csrf
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
             <textarea type="text" class="form-control" id="roomDescription" name="description" value={{ $room->description }}></textarea>
-            {{ Form::textarea('name', $room->description, array('class' => 'form-control')) }}
         </div>
-        {{ Form::submit('Submit Edit', array('class' => 'btn btn-primary')) }}
-    {{ Form::close() }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 @endsection
