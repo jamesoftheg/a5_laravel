@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use App\Models\Room;
 use Illuminate\Support\Facades\Validator;
 
 class BookingsController extends Controller
@@ -16,7 +17,8 @@ class BookingsController extends Controller
     public function index()
     {
         $bookings = Booking::all();
-        return view('bookings.index')->with('bookings', $bookings);
+        $rooms = Room::all(['name', 'number']);
+        return view('bookings.index')->with('bookings', $bookings, 'rooms', $rooms);
     }
 
     /**

@@ -20,7 +20,12 @@
         </div>
         <div class="form-group">
             <label for="roomName">Room Name</label>
-            <input type="text" class="form-control" id="roomName"  name="room_name">
+            <select class="form-control" name="item_id">
+                @foreach($rooms as $room)
+                  <option value="{{$room->name}}">{{$room->name}}</option>
+                @endforeach
+            </select>
+            <!--<input type="text" class="form-control" id="roomName"  name="room_name">-->
         </div>
         <div class="form-group">
             <label for="guestName">Guest Name</label>
