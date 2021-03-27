@@ -46,7 +46,10 @@ class BookingsController extends Controller
             'booking_date' => 'required',
         ]);
 
-        if ($this->dateValidation('room_number','booking_date') == FALSE) {
+        $room = $request->room_number;
+        $date = $request->booking_date;
+
+        if ($this->dateValidation($room, $date) == FALSE) {
             return redirect('bookings.create');
         }
 
