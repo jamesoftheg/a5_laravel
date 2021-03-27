@@ -70,7 +70,7 @@ class BookingsController extends Controller
 
     function dateValidation($room, $date)
     {
-        $query = DB::select('select * from bookings where booking_date = ?', [$date]);
+        $query = Booking::select('*')->where('room_number', $room);
 
         if($query->num_rows() >= 1) {
             return FALSE;  
