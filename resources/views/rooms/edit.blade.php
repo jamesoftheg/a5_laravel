@@ -13,7 +13,7 @@
     </div>
     @endif
     <form action="/rooms" method="post">
-        @method('PUT')
+        @method('POST')
         @csrf
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
