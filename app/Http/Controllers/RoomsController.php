@@ -84,7 +84,7 @@ class RoomsController extends Controller
     public function edit($id)
     {
         $room = Room::find($id);
-        return view('rooms.edit')->with('rooms', $room);
+        return view('rooms.edit')->with('room', $room);
     }
 
     /**
