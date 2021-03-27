@@ -6,6 +6,8 @@
     <h1>Rooms</h1>
     <p>This is the rooms page.</p>
 
+    <a href="{{ URL('rooms/create')}}" class="btn btn-primary">Create a new Room</a>
+
     @if(count($rooms) > 0)
             @foreach($rooms as $key => $room)
             <?php $randomImg = rand(1, 6); ?>
