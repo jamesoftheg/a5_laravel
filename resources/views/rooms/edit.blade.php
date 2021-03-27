@@ -12,7 +12,7 @@
         </ul>
     </div>
     @endif
-    <form action="/rooms/{{ $room ->id }}" method="put">
+    <form action="/rooms" method="put">
         @method('put')
         @csrf
         <div class="form-group">
