@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Edit Room</h1>
+    <h1>Edit {{ $room ->name }}</h1>
     <hr>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,8 +12,8 @@
         </ul>
     </div>
     @endif
-    <form action="/rooms" method="post">
-        @method('post')
+    <form action="/rooms" method="put">
+        @method('put')
         @csrf
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
