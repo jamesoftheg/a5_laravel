@@ -15,7 +15,7 @@
                     <h4>Maximum occupancy: {{$room->occupancy}}</h4>
                     <img src="{{URL('/img'.'/'.$randomImg.'.jpg')}}" alt="Suite" style="width:100%">
                     <p>{{$room->description}}</p>
-                    <a href="{{ route('rooms.edit',$room->id)}}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('rooms/' . $room->id . '/edit')}}" class="btn btn-primary">Edit</a>
                     <form action="{{ url('/rooms', ['id' => $room->id]) }}" method="post">
                         <input class="btn btn-default" type="submit" value="Delete" />
                         @method('delete')

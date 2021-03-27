@@ -84,7 +84,7 @@ class RoomsController extends Controller
     public function edit($id)
     {
         $room = Room::find($id);
-        return view('rooms.edit', compact('room'));
+        return view('rooms.edit')->with('rooms', $room);
     }
 
     /**
@@ -96,7 +96,7 @@ class RoomsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $room = Room::findOrFail($id);
+        $room = Room::find($id);
 
         $validator = Validator::make($request->all(), [
             'description' => 'required',
