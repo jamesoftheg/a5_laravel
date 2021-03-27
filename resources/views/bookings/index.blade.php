@@ -9,7 +9,28 @@
     <a href="{{ URL('bookings/create')}}" class="btn btn-primary">Create a new Booking</a>
 
     @if(count($bookings) > 0)
-
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Room Number</th>
+                <th scope="col">Room Name</th>
+                <th scope="col">Guest Name</th>
+                <th scope="col">Booking Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach($bookings as $key => $booking)
+                    <tr>
+                        <td>{{$booking->room_number}}</td>
+                        <td>{{$booking->room_name}}</td>
+                        <td>{{$booking->guest_name}}</td>
+                        <td>{{$booking->booking_date}}</td>
+                        <td>EDIT</td>
+                        <td>DELETE</td>
+                    </tr>
+                @endforeach
     @else
         <p>No rooms found.</p>
     @endif
