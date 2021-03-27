@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use Illuminate\Support\Facades\Validator;
 
 class BookingsController extends Controller
 {
@@ -25,7 +26,7 @@ class BookingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('bookings.create');
     }
 
     /**
@@ -36,7 +37,34 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = [ 'booking_date.unique' => 'Date has been booked', ];
+
+        $validator = Validator::make($request->all(), [
+            'room_number' => 'required',
+            'room_name' => 'required',
+            'guest_name' => 'required',
+            'booking_date' => ['required', Rule::unique('booking_date')->where(function ($query) use($room) {
+                    return $query->where('room_number', $room);
+                }),
+            ],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('bookings.create')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            // store
+            $booking = new Booking;
+            $booking->room_number = $request->room_number;
+            $booking->room_name = $request->room_name;
+            $booking->guest_name = $request->guest_name;
+            $booking->booking_date = $request->booking_date;
+            $booking->save();
+
+            $bookings = Booking::all();
+            return view('bookings.index')->with('bookings', $bookings);
+        }
     }
 
     /**
@@ -47,7 +75,7 @@ class BookingsController extends Controller
      */
     public function show($id)
     {
-        //
+        return Booking::find($id);
     }
 
     /**
@@ -58,7 +86,8 @@ class BookingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $booking = Booking::find($id);
+        return view('bookings.edit')->with('booking', $booking);
     }
 
     /**
@@ -81,6 +110,10 @@ class BookingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking->delete();
+
+        $bookings = Booking::all();
+        return view('bookings.index')->with('bookings', $bookings);
     }
 }

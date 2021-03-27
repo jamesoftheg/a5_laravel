@@ -6,6 +6,8 @@
     <h1>Bookings</h1>
     <p>This is the bookings page.</p>
 
+    <a href="{{ URL('bookings/create')}}" class="btn btn-primary">Create a new Booking</a>
+
     @if(count($bookings) > 0)
 
     @else
