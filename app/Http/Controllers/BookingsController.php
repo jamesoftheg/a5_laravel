@@ -17,8 +17,7 @@ class BookingsController extends Controller
     public function index()
     {
         $bookings = Booking::all();
-        $rooms = Room::all(['name', 'number']);
-        return view('bookings.index')->with('bookings', $bookings, 'rooms', $rooms);
+        return view('bookings.index')->with('bookings', $bookings);
     }
 
     /**
@@ -28,7 +27,8 @@ class BookingsController extends Controller
      */
     public function create()
     {
-        return view('bookings.create');
+        $rooms = Room::all(['name', 'number']);
+        return view('bookings.create')->with('rooms', $rooms);
     }
 
     /**
