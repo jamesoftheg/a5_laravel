@@ -12,8 +12,8 @@
         </ul>
     </div>
     @endif
-    <form action="/rooms" method="put">
-        @method('PUT')
+    <form action="/rooms" method="post">
+        @method('post')
         @csrf
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
