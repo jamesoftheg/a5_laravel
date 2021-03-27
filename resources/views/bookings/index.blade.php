@@ -31,6 +31,8 @@
                         <td>DELETE</td>
                     </tr>
                 @endforeach
+            </tbody>
+        </table>
     @else
         <p>No rooms found.</p>
     @endif
