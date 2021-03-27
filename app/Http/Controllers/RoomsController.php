@@ -108,7 +108,7 @@ class RoomsController extends Controller
                 ->withInput();
         } else {
             // store
-            $room->description = $get->description;
+            $room->description = $request->description;
             $room->save();
 
             $rooms = Room::all();

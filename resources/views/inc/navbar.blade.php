@@ -6,9 +6,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="/">Home</a>
-        <a class="nav-item nav-link" href="http://127.0.0.1/lab5/public/rooms">Rooms</a>
-        <a class="nav-item nav-link" href="http://127.0.0.1/lab5/public/bookings">Bookings</a>
-        <a class="nav-item nav-link" href="http://127.0.0.1/lab5/public/about">About</a>
+        <a class="nav-item nav-link" href="/rooms">Rooms</a>
+        <a class="nav-item nav-link" href="/bookings">Bookings</a>
+        <a class="nav-item nav-link" href="/about">About</a>
         <a class="nav-item nav-link" href="http://127.0.0.1/lab5/public/services">Services</a>
       </div>
     </div>
