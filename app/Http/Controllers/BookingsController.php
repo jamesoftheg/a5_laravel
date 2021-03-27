@@ -50,7 +50,8 @@ class BookingsController extends Controller
         $date = $request->booking_date;
 
         if ($this->dateValidation($room, $date) == FALSE) {
-            return redirect('bookings.create');
+            $bookings = Booking::all();
+            return view('bookings.index')->with('bookings', $bookings);
         }
 
         if ($validator->fails()) {
