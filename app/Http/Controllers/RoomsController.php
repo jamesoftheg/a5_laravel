@@ -96,6 +96,8 @@ class RoomsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $room = Room::findOrFail($id);
+
         $validator = Validator::make($request->all(), [
             'description' => 'required',
         ]);
@@ -106,7 +108,6 @@ class RoomsController extends Controller
                 ->withInput();
         } else {
             // store
-            $room = Room::find($id);
             $room->description = $request->description;
             $room->save();
 
