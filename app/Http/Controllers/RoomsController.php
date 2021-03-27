@@ -83,7 +83,8 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::find($id);
+        return view('rooms.edit', compact('room'));
     }
 
     /**
@@ -95,7 +96,23 @@ class RoomsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'description' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('rooms.edit')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            // store
+            $room = Room::find($id);
+            $room->description = $request->description;
+            $room->save();
+
+            $rooms = Room::all();
+            return view('rooms.index')->with('rooms', $rooms);
+        }
     }
 
     /**

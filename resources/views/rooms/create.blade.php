@@ -3,8 +3,17 @@
 @section('content')
     <h1>Add New Room</h1>
     <hr>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="/rooms" method="post">
-        {{ csrf_field() }}
+        @csrf
         <div class="form-group">
             <label for="roomNumber">Room Number</label>
             <input type="text" class="form-control" id="roomNumber"  name="number">
@@ -21,15 +30,6 @@
             <label for="roomAmount">Room Occupancy</label>
             <input type="text" class="form-control" id="roomAmount" name="occupancy"/>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection
