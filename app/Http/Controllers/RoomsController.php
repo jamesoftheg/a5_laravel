@@ -124,6 +124,7 @@ class RoomsController extends Controller
      */
     public function destroy($id)
     {
+        //$query = Booking::select('*')->where('room_number', $room)->where('booking_date', $date)->count();
         $room = Room::find($id);
         $room->delete();
 

@@ -16,7 +16,6 @@
                 <th scope="col">Room Name</th>
                 <th scope="col">Guest Name</th>
                 <th scope="col">Booking Date</th>
-                <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
             </thead>
@@ -27,7 +26,6 @@
                         <td>{{$booking->room_name}}</td>
                         <td>{{$booking->guest_name}}</td>
                         <td>{{$booking->booking_date}}</td>
-                        <td>EDIT</td>
                         <td>DELETE</td>
                     </tr>
                 @endforeach

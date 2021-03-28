@@ -27,7 +27,7 @@ class BookingsController extends Controller
      */
     public function create()
     {
-        $rooms = Room::all(['name', 'number']);
+        $rooms = Room::all(['name', 'number', 'id']);
         return view('bookings.create')->with('rooms', $rooms);
     }
 
@@ -63,6 +63,7 @@ class BookingsController extends Controller
         } else {
             // store
             $booking = new Booking;
+            $booking->room_id = $request->room_id;
             $booking->room_number = $request->room_number;
             $booking->room_name = $request->room_name;
             $booking->guest_name = $request->guest_name;
