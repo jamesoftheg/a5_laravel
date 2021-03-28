@@ -17,7 +17,7 @@
         @csrf
         <div class="form-group">
             <label for="roomDescription">Room Description</label>
-            <textarea type="text" class="form-control" id="roomDescription" name="description" value={{ $room->description }}></textarea>
+            <textarea type="text" class="form-control" id="roomDescription" name="description">{{ $room->description }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

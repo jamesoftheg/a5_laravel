@@ -64,10 +64,11 @@ class BookingsController extends Controller
             // store
             $roomName = $request->room_name;
             $room_id = Room::select('*')->where('name', $roomName)->value('id');
+            $room_number = Room::select('*')->where('name', $roomName)->value('number');
 
             $booking = new Booking;
             $booking->room_id = $room_id;
-            $booking->room_number = $request->room_number;
+            $booking->room_number = $room_number;
             $booking->room_name = $request->room_name;
             $booking->guest_name = $request->guest_name;
             $booking->booking_date = $request->booking_date;
