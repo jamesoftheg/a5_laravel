@@ -26,7 +26,13 @@
                         <td>{{$booking->room_name}}</td>
                         <td>{{$booking->guest_name}}</td>
                         <td>{{$booking->booking_date}}</td>
-                        <td>DELETE</td>
+                        <td>                    
+                            <form action="{{ URL('/bookings', ['id' => $booking->id]) }}" method="post">
+                                <input class="btn btn-default" type="submit" value="Delete" />
+                                @method('delete')
+                                @csrf
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
