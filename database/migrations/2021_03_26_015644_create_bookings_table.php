@@ -15,7 +15,7 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('room_id');
+            $table->foreignId('room_id')->references('id')->on('rooms');
             $table->integer('room_number');
             $table->string('room_name');
             $table->string('guest_name');
