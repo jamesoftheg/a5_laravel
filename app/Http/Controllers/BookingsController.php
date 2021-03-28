@@ -47,7 +47,7 @@ class BookingsController extends Controller
             'booking_date' => 'required',
         ]);
 
-        $room = $request->room_number;
+        $room = $request->room_name;
         $date = $request->booking_date;
 
         if ($this->dateValidation($room, $date) == FALSE) {
@@ -80,7 +80,7 @@ class BookingsController extends Controller
 
     function dateValidation($room, $date)
     {
-        $query = Booking::select('*')->where('room_number', $room)->where('booking_date', $date)->count();
+        $query = Booking::select('*')->where('room_name', $room)->where('booking_date', $date)->count();
 
         if($query >= 1) {
             return FALSE;  
