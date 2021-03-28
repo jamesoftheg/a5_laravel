@@ -42,7 +42,6 @@ class BookingsController extends Controller
         $messages = [ 'booking_date.unique' => 'Date has been booked', ];
 
         $validator = Validator::make($request->all(), [
-            'room_number' => 'required',
             'room_name' => 'required',
             'guest_name' => 'required',
             'booking_date' => 'required',
