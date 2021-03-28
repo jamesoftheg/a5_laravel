@@ -22,7 +22,7 @@
             <label for="roomName">Room Name</label>
             <select class="form-control" name="room_name">
                 @foreach($rooms as $room)
-                  <option value='{"room_name":"{{$room->name}}", "room_id":"{{$room->id}}"}'>{{$room->name}}</option>
+                  <option value="{{$room->name}}">{{$room->name}}</option>
                 @endforeach
             </select>
             <!--<input type="text" class="form-control" id="roomName"  name="room_name">-->

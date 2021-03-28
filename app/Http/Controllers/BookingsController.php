@@ -62,6 +62,9 @@ class BookingsController extends Controller
                 ->withInput();
         } else {
             // store
+            $roomName = $request->room_name;
+            $room_id = Room::find($id)->where('name', $roomName);
+
             $booking = new Booking;
             $booking->room_id = $request->room_id;
             $booking->room_number = $request->room_number;
