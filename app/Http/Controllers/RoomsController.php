@@ -126,6 +126,8 @@ class RoomsController extends Controller
     {
         //$query = Booking::select('*')->where('room_number', $room)->where('booking_date', $date)->count();
         $room = Room::find($id);
+        $bookings = Booking::all()->where('room_id', $id);
+        $bookings->delete();
         $room->delete();
 
         $rooms = Room::all();
