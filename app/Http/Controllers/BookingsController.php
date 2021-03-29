@@ -48,7 +48,9 @@ class BookingsController extends Controller
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
-            'booking_date' => 'required',
+            'booking_date' => ['required', Rule::unique('bookings')->where(function ($query) use ($request) {
+                return $query->where('room_name', $request->room_name);
+            })],
         ]);
 
         /*
@@ -56,8 +58,8 @@ class BookingsController extends Controller
 
         $this->validate(request(), [
             'booking_date' => [function ($room, $date, $fail) {
-                $roomCheck = $room;
-                $dateCheck = $date;
+                $roomCheck = $check[0];
+                $dateCheck = $check[1];
 
                 $query = Booking::select('*')->where('room_name', $roomCheck)->where('booking_date', $dateCheck)->count();
 
@@ -71,9 +73,8 @@ class BookingsController extends Controller
         */
 
         if ($this->dateValidation($room, $date) == FALSE) {
-            return redirect('bookings.create')
-                ->withErrors($validator)
-                ->withInput();
+            $bookings = Booking::all();
+            return view('bookings.index')->with('bookings', $bookings);
         }
 
 
