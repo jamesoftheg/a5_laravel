@@ -48,10 +48,7 @@ class BookingsController extends Controller
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
-            'booking_date' => [
-                'required',
-                Rule::unique('booking_date')->where('room_name', $room),
-            ],
+            'booking_date' => 'required',
         ]);
 
         /*
@@ -73,12 +70,12 @@ class BookingsController extends Controller
         ]);
         */
 
-        /*
         if ($this->dateValidation($room, $date) == FALSE) {
-            $bookings = Booking::all();
-            return view('bookings.index')->with('bookings', $bookings);
+            return redirect('bookings.create')
+                ->withErrors($validator)
+                ->withInput();
         }
-        */
+
 
         if ($validator->fails()) {
             return redirect('bookings.create')
