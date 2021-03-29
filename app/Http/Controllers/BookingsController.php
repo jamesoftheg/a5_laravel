@@ -51,7 +51,7 @@ class BookingsController extends Controller
             'booking_date' => 'required',
         ]);
 
-        $check = array('room' => $room, 'date' => $date);
+        $check = array([room] => $room, [date] => $date);
 
         $this->validate(request(), [
             'booking_date' => [function ($attribute, $check, $fail) {
