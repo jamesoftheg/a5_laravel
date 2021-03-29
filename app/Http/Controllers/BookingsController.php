@@ -71,8 +71,13 @@ class BookingsController extends Controller
             }]
         ]);
         */
-
+        $dateError = 'Date has already been booked!';
         if ($this->dateValidation($room, $date) == FALSE) {
+            return redirect('bookings')
+                ->withErrors($dateError)
+                ->withInput();
+        } 
+        if ($validator->fails() || $this->dateValidation($room, $date) == FALSE) {
             return redirect('bookings')
                 ->withErrors($validator)
                 ->withInput();
