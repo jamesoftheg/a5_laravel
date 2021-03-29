@@ -61,8 +61,10 @@ class BookingsController extends Controller
                 $query = Booking::select('*')->where('room_name', $roomCheck)->where('booking_date', $dateCheck)->count();
 
                 if($query >= 1) {
-                    $fail(':Room already booked!'); 
+                    $fail(':Room already booked!');
+                    return FALSE;  
                 } 
+                return TRUE;
             }]
         ]);
 
