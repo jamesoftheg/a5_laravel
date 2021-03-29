@@ -72,7 +72,7 @@ class BookingsController extends Controller
         ]);
         */
 
-        if ($validator->fails() && $this->dateValidation($room, $date) == FALSE) {
+        if ($this->dateValidation($room, $date) == FALSE) {
             return redirect('bookings')
                 ->withErrors($validator)
                 ->withInput();
