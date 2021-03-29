@@ -12,12 +12,12 @@ class PagesController extends Controller
         // This is one way to pass parameters.
         // return view('pages.index', compact('title'));
         // This is a good way to pass in arrays.
-        return view('pages.index')->with('title', $title);
+        return view('pages.index');
     }
 
     public function about() {
         $title = 'About Us';
-        return view('pages.about')->with('title', $title);
+        return view('pages.about');
     }
 
     public function services() {
