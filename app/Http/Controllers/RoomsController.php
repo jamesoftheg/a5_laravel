@@ -47,7 +47,7 @@ class RoomsController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('rooms')
+            return redirect('rooms/create')
                 ->withErrors($validator)
                 ->withInput();
         } else {
