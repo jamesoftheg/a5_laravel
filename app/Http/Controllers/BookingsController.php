@@ -50,12 +50,8 @@ class BookingsController extends Controller
             'guest_name' => 'required',
             'booking_date' => [
                 'required',
-                Rule::where(function ($query) {
-                    $query = Booking::select('*')->where('room_name', $room)->where('booking_date', $date)->count();
-                    if($query >= 1) {
-                        return FALSE;  
-                    } 
-                    return TRUE;
+                Rule::unique('booking_date')->where(function ($query) {
+                    return $query->where('room_name', $room);
                 }),
             ],
         ]);
