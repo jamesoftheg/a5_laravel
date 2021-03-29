@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Contracts\Validation\Rule;
 
 class BookingsController extends Controller
 {
