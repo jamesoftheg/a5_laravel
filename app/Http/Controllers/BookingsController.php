@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Contracts\Validation\Rule;
 
 class BookingsController extends Controller
 {
@@ -47,9 +46,7 @@ class BookingsController extends Controller
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
-            'booking_date' => Rule::unique('bookings')->where(function ($query) {
-                return $query->where('room_name', $room);
-           }),
+            'booking_date' => 'required',
         ]);
 
         /*
@@ -75,14 +72,7 @@ class BookingsController extends Controller
         ]);
         */
 
-        /*
-        if ($this->dateValidation($room, $date) == FALSE) {
-            $bookings = Booking::all();
-            return view('bookings.index')->with('bookings', $bookings);
-        }
-        */
-
-        if ($validator->fails()) {
+        if ($validator->fails() && $this->dateValidation($room, $date) == FALSE) {
             return redirect('bookings')
                 ->withErrors($validator)
                 ->withInput();
