@@ -40,21 +40,21 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        $messages = [ 'booking_date.unique' => 'Date has been booked', ];
-
         $room = $request->room_name;
         $date = $request->booking_date;
 
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
-            'booking_date' => ['required', Rule::unique('bookings')->where(function ($query) use ($request) {
-                return $query->where('room_name', $request->room_name);
-            })],
+            'booking_date' => 'required|unique:bookings,room_name',
         ]);
 
         /*
         $check = array($room, $date);
+
+        ['required', Rule::unique('bookings')->where(function ($query) use ($request) {
+                return $query->where('room_name', $request->room_name);
+            })],
 
         $this->validate(request(), [
             'booking_date' => [function ($room, $date, $fail) {
@@ -72,11 +72,12 @@ class BookingsController extends Controller
         ]);
         */
 
+        /*
         if ($this->dateValidation($room, $date) == FALSE) {
             $bookings = Booking::all();
             return view('bookings.index')->with('bookings', $bookings);
         }
-
+        */
 
         if ($validator->fails()) {
             return redirect('bookings.create')
