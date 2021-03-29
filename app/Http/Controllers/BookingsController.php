@@ -52,7 +52,7 @@ class BookingsController extends Controller
         ]);
 
         $this->validate(request(), [
-            'booking_date' => [function ($attribute, $room, $date, $fail) {
+            'booking_date' => [function ($room, $date, $fail) {
                 $query = Booking::select('*')->where('room_name', $room)->where('booking_date', $date)->count();
 
                 if($query >= 1) {
