@@ -42,19 +42,31 @@ class BookingsController extends Controller
     {
         $messages = [ 'booking_date.unique' => 'Date has been booked', ];
 
+        $room = $request->room_name;
+        $date = $request->booking_date;
+
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
             'booking_date' => 'required',
         ]);
 
-        $room = $request->room_name;
-        $date = $request->booking_date;
+        $this->validate(request(), [
+            'booking_date' => [function ($attribute, $room, $date, $fail) {
+                $query = Booking::select('*')->where('room_name', $room)->where('booking_date', $date)->count();
 
+                if($query >= 1) {
+                    $fail(':Room already booked!'); 
+                } 
+            }]
+        ]);
+
+        /*
         if ($this->dateValidation($room, $date) == FALSE) {
             $bookings = Booking::all();
             return view('bookings.index')->with('bookings', $bookings);
         }
+        */
 
         if ($validator->fails()) {
             return redirect('bookings.create')

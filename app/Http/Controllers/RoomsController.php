@@ -40,7 +40,7 @@ class RoomsController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'number' => 'required|numeric',
+            'number' => 'required|numeric|unique:rooms',
             'name' => 'required|unique:rooms',
             'description' => 'required',
             'occupancy' => 'required|numeric',

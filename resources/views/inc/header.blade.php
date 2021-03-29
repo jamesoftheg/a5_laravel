@@ -1,0 +1,1 @@
+<img src="{{URL('/img/header.jpg')}}" alt="Header" style="width:100%">
