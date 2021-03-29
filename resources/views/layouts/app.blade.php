@@ -18,6 +18,28 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                min-height: 100%;
+                padding-bottom: 100px;
+            }
+
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+                background-color: #0000FF;
+            }
+
+            .active {
+                background-color: #9F79EE;
+            }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color:black;
+                color:white;
+                padding: 5px 5px 1px 5px;
+                margin-top: 20px;
             }
         </style>
 

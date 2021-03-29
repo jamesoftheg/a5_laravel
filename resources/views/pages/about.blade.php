@@ -28,7 +28,7 @@
             <div class="thumbnail">
                 <img src="{{URL('/img/lodge.jpg')}}" alt="Lights" style="width:100%">
                 <div class="caption">
-                <p>Built in 1909, Overlook Hotel has always been a grand refuge for visitors wanting to experience the magnificent and expansive high-alpine environment of Mt. Torrance. 
+                <p>Built in 1907, Overlook Hotel has always been a grand refuge for visitors wanting to experience the magnificent and expansive high-alpine environment of Mt. Torrance. 
                     A night (or a few) enjoyed in the comfort and warmth of the Hotel is like stepping back into simpler times, yet with all modern conveniences discreetly available.</p>
                 </div>
             </div>

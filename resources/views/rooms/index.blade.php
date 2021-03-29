@@ -4,7 +4,7 @@
 <!-- If we want this to go into our content we have to wrap in section -->
 @section('content')
     <h1>Rooms</h1>
-    <p>This is the rooms page.</p>
+    <p>Since 1907.</p>
 
     <a href="{{ URL('rooms/create')}}" class="btn btn-primary">Create a new Room</a>
 

@@ -5,10 +5,10 @@
 @section('content')
     <h1>Overlook Hotel</h1>
     <img src="{{URL('/img/hotelrear.jpg')}}" alt="Hotel" style="width:100%">
-    <p>Constructed in 1909, the Overlook stands on the southern slope of Mt. Torrance at an elevation of 6,000 feet. 
+    <p>Constructed in 1907, the Overlook stands on the southern slope of Mt. Torrance at an elevation of 6,000 feet. 
         This beautiful 55,000 square foot structure rises out of a pristine alpine landscape and is still being used for its original intent 
         – a magnificent ski lodge and mountain retreat for everyone to enjoy. Legendary and awe-inspiring, it's a tribute to the rugged spirit of Colorado. 
-        Declared a National Historic Landmark in 1977, the Overlook Hotel is one of Colorado’s most popular tourist attractions, drawing nearly two million visitors every year.
+        Declared a National Historic Landmark in 1980, the Overlook Hotel is one of Colorado’s most popular tourist attractions, drawing nearly two million visitors every year.
     </p>
     <img src="{{URL('/img/pool.jpg')}}" alt="Hotel" style="width:100%">
     <p>
