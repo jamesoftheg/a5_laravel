@@ -46,7 +46,7 @@ class BookingsController extends Controller
         $validator = Validator::make($request->all(), [
             'room_name' => 'required',
             'guest_name' => 'required',
-            'booking_date' => 'required|unique:bookings',
+            'booking_date' => 'required|unique:bookings, room_name',
         ]);
 
         /*
