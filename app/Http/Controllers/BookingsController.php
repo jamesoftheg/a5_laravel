@@ -80,7 +80,7 @@ class BookingsController extends Controller
         */
 
         if ($validator->fails()) {
-            return redirect('bookings.create')
+            return redirect('bookings')
                 ->withErrors($validator)
                 ->withInput();
         } else {
