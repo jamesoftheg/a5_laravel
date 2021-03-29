@@ -70,20 +70,24 @@ class BookingsController extends Controller
                 return TRUE;
             }]
         ]);
-        */
-        $dateError = 'Date has already been booked!';
-        if ($this->dateValidation($room, $date) == FALSE && $validator->fails()) {
-            return redirect('bookings')
-                ->withErrors($dateError)
-                ->withErrors($validator)
-                ->withInput();
-        } 
+
         if ($validator->fails() || $this->dateValidation($room, $date) == FALSE) {
             return redirect('bookings')
                 ->withErrors($validator)
                 ->withErrors($dateError)
                 ->withInput();
-        } else {
+        }
+
+        */
+        $dateError = 'Date has already been booked!';
+        if ($this->dateValidation($room, $date) == FALSE && $validator->fails()) {
+            array_push($validator, $dateError);
+            return redirect('bookings')
+                //->withErrors($dateError)
+                ->withErrors($validator)
+                ->withInput();
+        } 
+         else {
             // store
             $roomName = $request->room_name;
             $room_id = Room::select('*')->where('name', $roomName)->value('id');
