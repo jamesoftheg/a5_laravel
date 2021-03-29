@@ -3,8 +3,7 @@
 
 <!-- If we want this to go into our content we have to wrap in section -->
 @section('content')
-    <h1>{{$title}}</h1>
-    <p>This is the about page.</p>
+    <h1>About the Overlook</h1>
 
     <div class="row">
         <div class="col-lg-4">
