@@ -80,8 +80,10 @@ class BookingsController extends Controller
 
         */
         if ($this->dateValidation($room, $date) == FALSE || $validator->fails()) {
-            if ($this->dateValidation($room, $date) == FALSE) {
-                $validator->errors()->add('booking_date', 'There is an issue with your booking date.');
+            if ($room!= null && $date != null) {
+                if ($this->dateValidation($room, $date) == FALSE) {
+                    $validator->errors()->add('booking_date', 'Your selected date has been booked.');
+                }
             }
             return redirect('bookings')
                 ->withErrors($validator)
