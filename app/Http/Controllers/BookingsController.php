@@ -75,7 +75,8 @@ class BookingsController extends Controller
             $booking->save();
 
             $bookings = Booking::all();
-            return view('bookings.index')->with('bookings', $bookings);
+            $rooms = Room::all();
+            return view('bookings.index')->with('bookings', $bookings)->with('rooms', $rooms);
         }
     }
 
@@ -136,6 +137,7 @@ class BookingsController extends Controller
         $booking->delete();
 
         $bookings = Booking::all();
-        return view('bookings.index')->with('bookings', $bookings);
+        $rooms = Room::all();
+        return view('bookings.index')->with('bookings', $bookings)->with('rooms', $rooms);
     }
 }
