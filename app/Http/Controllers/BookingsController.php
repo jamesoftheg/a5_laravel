@@ -51,12 +51,12 @@ class BookingsController extends Controller
             'booking_date' => 'required',
         ]);
 
-        $check = array(['room'] => $room, ['date'] => $date);
+        $check = array($room, $date);
 
         $this->validate(request(), [
             'booking_date' => [function ($attribute, $check, $fail) {
-                $roomCheck = $check['room'];
-                $dateCheck = $check['date'];
+                $roomCheck = array_get($this->data, $check[0]);
+                $dateCheck = array_get($this->data, $check[1]);
 
                 $query = Booking::select('*')->where('room_name', $roomCheck)->where('booking_date', $dateCheck)->count();
 
