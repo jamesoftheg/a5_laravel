@@ -62,7 +62,7 @@
                 <p>The three themes for the Hotel – Native American motif, pioneer, and native flora and fauna – were to be incorporated in every aspect of the lodge, down to the furniture and artwork. 
                   Works Progress Administration (WPA) interior designer Margery Hoffman Smith collaborated with textile weavers, blacksmiths, and woodworkers in order to convey those interior themes. 
                   She also selected water colors and oil paintings to adorn the Hotel. 
-                  The effort to use native materials, to repurpose other materials (such as old CCC uniforms for textiles), and to design domestic items to be aesthetically pleasing stemmed from the Arts and Crafts Movement of the early 20th Century.</p>
+                </p>
                 </div>
             </div>
         </div>
@@ -102,6 +102,25 @@
                 <img src="{{URL('/img/lobby-night.jpg')}}" alt="Hotel" style="width:100%">
             </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="thumbnail">
+            <img src="{{URL('/img/fire.jpg')}}" alt="Hotel" style="width:100%">
+          </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="thumbnail">
+              <img src="{{URL('/img/lobby-stairs.jpg')}}" alt="Hotel" style="width:100%">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="thumbnail">
+                <img src="{{URL('/img/maze.jpg')}}" alt="Hotel" style="width:100%">
+            </div>
+        </div>
+      </div>
 
   </div>
     
