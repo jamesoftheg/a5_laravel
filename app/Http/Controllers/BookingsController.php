@@ -49,36 +49,6 @@ class BookingsController extends Controller
             'booking_date' => 'required',
         ]);
 
-        /*
-        $check = array($room, $date);
-
-        ['required', Rule::unique('bookings')->where(function ($query) use ($request) {
-                return $query->where('room_name', $request->room_name);
-            })],
-
-        $this->validate(request(), [
-            'booking_date' => [function ($room, $date, $fail) {
-                $roomCheck = $check[0];
-                $dateCheck = $check[1];
-
-                $query = Booking::select('*')->where('room_name', $roomCheck)->where('booking_date', $dateCheck)->count();
-
-                if($query >= 1) {
-                    $fail(':Room already booked!');
-                    return FALSE;  
-                } 
-                return TRUE;
-            }]
-        ]);
-
-        if ($validator->fails() || $this->dateValidation($room, $date) == FALSE) {
-            return redirect('bookings')
-                ->withErrors($validator)
-                ->withErrors($dateError)
-                ->withInput();
-        }
-
-        */
         if ($this->dateValidation($room, $date) == FALSE || $validator->fails()) {
             if ($room!= null && $date != null) {
                 if ($this->dateValidation($room, $date) == FALSE) {
