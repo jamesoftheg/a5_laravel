@@ -7,6 +7,13 @@ use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * "StAuth10065: I James Gelfand, 000275852 certify that this material is my original work. 
+ * No other person's work has been used without due acknowledgement. I have not made my work available to anyone else."
+ * 
+ * Hotel text from https://www.timberlinelodge.com
+ */
+
 class BookingsController extends Controller
 {
     /**

@@ -4,7 +4,9 @@
 <!-- If we want this to go into our content we have to wrap in section -->
 @section('content')
     <h1>Rooms</h1>
-    <p>Since 1907.</p>
+    <p>The hotel and its restaurants continue to be open for overnight guests only. 
+        Torrance County COVID-19 risk levels have improved, allowing restaurants and bars to open with limited seating capacity. 
+        Stay safe and healthy and we appreciate you all working with us and adhering to local guidelines during these times.</p>
 
     <a href="{{ URL('rooms/create')}}" class="btn btn-primary btn-block">Create a new Room</a>
 
