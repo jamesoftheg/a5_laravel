@@ -44,6 +44,7 @@
         @endif
     </div>
     <div class="container">
+        <div class="hotelcard">
         @if(count($bookings) > 0)
             <table class="table">
                 <thead>
@@ -76,5 +77,6 @@
         @else
             <p>No rooms found.</p>
         @endif
+        </div>
     </div>
 @endsection
