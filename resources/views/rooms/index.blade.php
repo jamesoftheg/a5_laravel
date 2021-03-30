@@ -11,7 +11,8 @@
     @if(count($rooms) > 0)
             @foreach($rooms as $key => $room)
             <?php $randomImg = rand(1, 6); ?>
-                <div class="card card-body bg-light hotelcard">
+            <div class="hotelcard">
+                <div class="card card-body bg-light">
                     <h3>{{$room->name}}</h3>
                     <h4>Room number: {{$room->number}}</h4>
                     <h4>Maximum occupancy: {{$room->occupancy}}</h4>
@@ -38,6 +39,7 @@
                         @csrf
                     </form>
                 </div>
+            </div>
             @endforeach
     @else
         <p>No rooms found.</p>
