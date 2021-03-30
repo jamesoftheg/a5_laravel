@@ -42,12 +42,16 @@
                 margin-top: 20px;
             }
 
-            [class^="card"] {
+            .hotelcard {
                 padding: 10px;
                 background: red
             }
 
             #delete {
+                width:100%;
+            }
+
+            .delete {
                 width:100%;
             }
         </style>
