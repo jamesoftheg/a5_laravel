@@ -41,6 +41,15 @@
                 padding: 5px 5px 1px 5px;
                 margin-top: 20px;
             }
+
+            [class^="card"] {
+                padding: 10px;
+                background: red
+            }
+
+            #delete {
+                width:100%;
+            }
         </style>
 
         <!-- Bootstrap CSS -->
