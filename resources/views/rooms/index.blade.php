@@ -11,15 +11,29 @@
     @if(count($rooms) > 0)
             @foreach($rooms as $key => $room)
             <?php $randomImg = rand(1, 6); ?>
-                <div class="card card-body bg-light">
+                <div class="card card-body bg-light" style="padding:5px">
                     <h3>{{$room->name}}</h3>
                     <h4>Room number: {{$room->number}}</h4>
                     <h4>Maximum occupancy: {{$room->occupancy}}</h4>
                     <img src="{{URL('/img'.'/'.$randomImg.'.jpg')}}" alt="Suite" style="width:100%">
                     <p>{{$room->description}}</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <a href="{{ URL('rooms/' . $room->id . '/edit')}}" class="btn btn-primary">Edit</a>
+                            </div>
+                            <div class="col-sm">
+                                <form action="{{ URL('/rooms', ['id' => $room->id]) }}" method="post">
+                                    <input class="btn btn-danger" type="submit" value="Delete" />
+                                    @method('delete')
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <a href="{{ URL('rooms/' . $room->id . '/edit')}}" class="btn btn-primary">Edit</a>
                     <form action="{{ URL('/rooms', ['id' => $room->id]) }}" method="post">
-                        <input class="btn btn-default" type="submit" value="Delete" />
+                        <input class="btn btn-danger" type="submit" value="Delete" />
                         @method('delete')
                         @csrf
                     </form>
