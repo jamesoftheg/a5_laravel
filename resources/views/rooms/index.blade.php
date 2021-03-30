@@ -6,8 +6,9 @@
     <h1>Rooms</h1>
     <p>The hotel and its restaurants continue to be open for overnight guests only. 
         Torrance County COVID-19 risk levels have improved, allowing restaurants and bars to open with limited seating capacity. 
-        Stay safe and healthy and we appreciate you all working with us and adhering to local guidelines during these times.</p>
-
+        Stay safe and healthy and we appreciate you all working with us and adhering to local guidelines during these times.
+    </p>
+    <p>Test Suite 404 has been provided with bookings to test delete from Rooms and Bookings.</p>
     <a href="{{ URL('rooms/create')}}" class="btn btn-primary btn-block">Create a new Room</a>
 
     @if(count($rooms) > 0)
