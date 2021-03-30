@@ -69,59 +69,59 @@
     </div>
 
     <h1>Views from the Overlook</h1>
+
     <div class="row">
       <div class="col-lg-4">
         <div class="thumbnail">
           <img src="{{URL('/img/fire.jpg')}}" alt="Hotel" style="width:100%">
+          <div class="caption">
+          <p>Nestle in for the long winter.</p>
+          </div>
         </div>
       </div>
       <div class="col-lg-4">
           <div class="thumbnail">
             <img src="{{URL('/img/carpet.jpg')}}" alt="Hotel" style="width:100%">
+            <div class="caption">
+            <p>The hotel has retained many vintage charms from past renovations. </p>
+            </div>
           </div>
       </div>
       <div class="col-lg-4">
           <div class="thumbnail">
               <img src="{{URL('/img/hallway.jpg')}}" alt="Hotel" style="width:100%">
+              <div class="caption">
+              <p>Get lost with us!</p>
+              </div>
           </div>
       </div>
+  </div>
 
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="{{URL('/img/checkin.jpg')}}" alt="Hotel" style="width:100%">
-          </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="thumbnail">
-              <img src="{{URL('/img/ballroom.jpg')}}" alt="Hotel" style="width:100%">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="thumbnail">
-                <img src="{{URL('/img/lobby-night.jpg')}}" alt="Hotel" style="width:100%">
-            </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="thumbnail">
+        <img src="{{URL('/img/checkin.jpg')}}" alt="Hotel" style="width:100%">
+        <div class="caption">
+        <p>Check in for a weekend, for the stay of a lifetime.</p>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="{{URL('/img/fire.jpg')}}" alt="Hotel" style="width:100%">
+    </div>
+    <div class="col-lg-4">
+        <div class="thumbnail">
+          <img src="{{URL('/img/ballroom.jpg')}}" alt="Hotel" style="width:100%">
+          <div class="caption">
+          <p>July 4th Ball, 1921.</p>
           </div>
         </div>
-        <div class="col-lg-4">
-            <div class="thumbnail">
-              <img src="{{URL('/img/lobby-stairs.jpg')}}" alt="Hotel" style="width:100%">
+    </div>
+    <div class="col-lg-4">
+        <div class="thumbnail">
+            <img src="{{URL('/img/lobby-night.jpg')}}" alt="Hotel" style="width:100%">
+            <div class="caption">
+            <p>Inspire yourself.</p>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="thumbnail">
-                <img src="{{URL('/img/maze.jpg')}}" alt="Hotel" style="width:100%">
-            </div>
-        </div>
-      </div>
-
+    </div>
   </div>
     
 @endsection
