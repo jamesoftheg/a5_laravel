@@ -86,6 +86,7 @@ class BookingsController extends Controller
         }
     }
 
+    // Validation ensures that a room can't be booked on an existing date.
     function dateValidation($room, $date)
     {
         $query = Booking::select('*')->where('room_name', $room)->where('booking_date', $date)->count();
